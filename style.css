@@ -13,19 +13,18 @@ html {
 
 body {
   font-family: "Rubik", sans-serif;
-  background-color: #d6dae5;
   text-align: center;
   line-height: 1;
   font-weight: 400;
-  /* background-image: url(assets/imgs/image.png); */
+  margin: 0;
 }
 .container {
-  /* display: none; */
-  margin: 0 auto;
   background-color: #fff;
-  width: 120rem;
-  height: 70rem;
-  border-radius: 18px;
+  height: 100vh;
+}
+
+.app {
+  height: 100vh;
 }
 
 h2 {
@@ -69,9 +68,6 @@ span {
 
 .grid {
   display: grid;
-  /* row-gap: 9.6rem;
-  column-gap: 6.4rem;
-  margin-bottom: 9.6rem; */
 }
 
 .grid--3-cols {
@@ -100,8 +96,8 @@ span {
 }
 
 .type {
-  width: 8.5rem;
-  height: 6.5rem;
+  width: 15rem;
+  height: 8rem;
   border-radius: 7px;
   margin-top: 2.4rem;
   color: #fff;
@@ -130,7 +126,7 @@ span {
 .pinned li {
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.12);
   margin: 1rem 0;
-  padding: 0.6rem;
+  padding: 1rem;
   border-radius: 8px;
 }
 
@@ -144,8 +140,8 @@ span {
 
 /* -------------------------------- */
 #title {
-  width: 90%;
-  padding: 0.6rem;
+  width: 95%;
+  padding: 1rem;
   font-size: 1.4rem;
   font-family: inherit;
   border: none;
@@ -163,12 +159,12 @@ span {
 
 #date {
   display: inline-block;
-  width: 70px;
+  width: 10rem;
   border: none;
   background-color: #f6f5fd;
-  padding: 0.6rem;
+  padding: 1rem 2rem;
   border-radius: 9px;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
 .from,
@@ -180,7 +176,7 @@ span {
 
 #select {
   width: 100%;
-  padding: 0.8rem;
+  padding: 1rem;
   font-size: 1rem;
   font-family: inherit;
   border: none;
@@ -193,13 +189,13 @@ span {
 
 .option {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   text-align: center;
 }
 
 #addNote {
   height: 5rem;
-  width: 90%;
+  width: 95%;
   padding: 0.6rem;
   font-size: 1.4rem;
   font-family: inherit;
@@ -263,8 +259,10 @@ span {
 .task-list {
   background-color: #fff;
   margin-top: 2rem;
+  border-radius: 6px;
 
   h2 {
+    padding: 1rem;
     padding-left: 4rem;
     font-size: 1.3rem;
   }
@@ -273,12 +271,13 @@ span {
 .todo-task {
   background-color: #fff;
   padding-left: 4rem;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-radius: 6px;
 }
 
 .todo {
   text-align: left;
-  width: 30rem;
+  width: 40rem;
   border-radius: 0 9px 9px 0;
   color: #fff;
   letter-spacing: 2px;
@@ -365,6 +364,8 @@ span {
 }
 
 .music {
+  padding-bottom: 10rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;

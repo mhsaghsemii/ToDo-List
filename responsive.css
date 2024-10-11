@@ -1,0 +1,69 @@
+/* 1344px Breakpoint - Smaller Desktop */
+@media (max-width: 84em) {
+  .todo {
+    width: 30rem;
+  }
+}
+
+/* 1200px Breakpoint - Landscape Tablet */
+@media (max-width: 75em) {
+  .app {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .todo {
+    width: 35rem;
+  }
+
+  .goal-section {
+    flex-direction: row-reverse;
+  }
+
+  .goal {
+    display: none;
+  }
+
+  .music {
+    padding-bottom: 0;
+    flex-direction: row;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .music-cover {
+    margin-right: 5rem;
+  }
+}
+
+/* 944px Breakpoint - Tablets */
+@media (max-width: 59em) {
+  .todo {
+    width: 20rem;
+  }
+  .todo-task {
+    padding-left: 2rem;
+  }
+}
+
+/* 544px Breakpoint - Moible  Phone */
+@media (max-width: 34em) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .music {
+    padding: 3rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .music-cover {
+    margin-right: 0;
+  }
+
+  .todo {
+    width: 30rem;
+  }
+}
