@@ -544,3 +544,9 @@ img {
   cursor: pointer;
   padding: 0;
 }
+#checkbtn{
+  cursor: pointer;
+}
+#closebtn{
+  cursor: pointer;
+}
