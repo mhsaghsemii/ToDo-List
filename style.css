@@ -297,23 +297,23 @@ span {
   border-left: 5px solid #b947b5;
 }
 
-.todo::after {
+/* .todo::after {
   content: url(assets/imgs/ion_checkmark-circle-outline.png);
   position: absolute;
   top: 50%;
   right: -4rem;
   cursor: pointer;
   transform: translateY(-50%);
-}
+} */
 
-.todo::before {
+/* .todo::before {
   content: url(assets/imgs/ion_close-circle-outline.png);
   position: absolute;
   top: 50%;
   right: -9rem;
   transform: translate(-50%, -50%);
   cursor: pointer;
-}
+} */
 
 /* ---------------------- */
 /* ----------------------- */
