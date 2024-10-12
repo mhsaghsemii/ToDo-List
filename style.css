@@ -307,7 +307,7 @@ span {
 }
 .todo {
   text-align: left;
-  display: flex;
+  /* display: flex; */
   width: 40rem;
   border-radius: 0 9px 9px 0;
   color: #fff;
