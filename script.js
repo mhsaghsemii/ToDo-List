@@ -37,13 +37,32 @@ function saveNote(e) {
     myUl.appendChild(newDiv);
     taskTitleinput.value = '';
     note.value = '';
-    
+    addtols({title:titleNote,note:mainNote});
 
 
     }
     
-    
+   
     
 
     
+}
+
+// second function for getting notes from local storage
+function getLocal(){
+    let revieveNote;
+    let lsNote = localStorage.getItem('note');
+    if(lsNote === null){
+        revieveNote = [];
+    }else{
+        revieveNote = JSON.parse(lsNote);
+    }
+    return revieveNote;
+}
+
+// third function for adding notes to local storage
+function addtols(usernote){
+    let oldnote = getLocal();
+    oldnote.push(usernote);
+    localStorage.setItem('note',JSON.stringify(oldnote));
 }
