@@ -1,11 +1,10 @@
-const taskTitleinput = document.querySelector('#title')
-const saveBtn = document.querySelector('btns color-tertiary text-white')
-
+const taskTitleinput = document.querySelector('#title');
+const saveBtn = document.querySelector('.btns');
 saveBtn.addEventListener('click', saveNote)
-
-function saveNote() {
-
-    const h3Title = document.querySelector('h3')
+function saveNote(e) {
+    e.preventDefault()
+    const h3Title = document.querySelector('#tasktitle')
     h3Title.textContent = taskTitleinput.value
+
     
 }
