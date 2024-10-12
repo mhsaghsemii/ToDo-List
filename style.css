@@ -155,6 +155,7 @@ span {
 .addTask {
   margin-left: 2.4rem;
   border-radius: 6px;
+  height: 500px;
 }
 
 #date {
@@ -221,7 +222,7 @@ span {
 }
 
 #addNote {
-  height: 5rem;
+  height: 25rem;
   width: 95%;
   padding: 0.6rem;
   font-size: 1.4rem;
