@@ -166,6 +166,33 @@ span {
   border-radius: 9px;
   font-size: 1.2rem;
 }
+#date2 {
+  display: inline-block;
+  width: 10rem;
+  border: none;
+  background-color: #f6f5fd;
+  padding: 1rem 2rem;
+  border-radius: 9px;
+  font-size: 1.2rem;
+}
+#time {
+  display: inline-block;
+  width: 10rem;
+  border: none;
+  background-color: #f6f5fd;
+  padding: 1rem 2rem;
+  border-radius: 9px;
+  font-size: 1.2rem;
+}
+#time2 {
+  display: inline-block;
+  width: 10rem;
+  border: none;
+  background-color: #f6f5fd;
+  padding: 1rem 2rem;
+  border-radius: 9px;
+  font-size: 1.2rem;
+}
 
 .from,
 .to {
