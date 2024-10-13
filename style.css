@@ -349,8 +349,6 @@ span {
 img {
   width: 25px;
   height: 25px;
-  padding-left: 20px;
-  padding-top: 15px;
 }
 
 .todo:nth-child(odd) {
