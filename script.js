@@ -3,6 +3,9 @@ const taskTitleinput = document.querySelector('#title');
 const myUl = document.querySelector('.mainUl');
 const note = document.querySelector('#addNote');
 const saveBtn = document.querySelector('.btns');
+const cancelBtn = document.querySelector('.btnss');
+const clearBtn = document.querySelector('#clearBtn');
+
 
 
 // first function to save the note and generate the note elements
@@ -65,4 +68,20 @@ function addtols(usernote){
     let oldnote = getLocal();
     oldnote.push(usernote);
     localStorage.setItem('note',JSON.stringify(oldnote));
+}
+
+// fourth function for cancel btn
+cancelBtn.addEventListener('click',cancel)
+function cancel(e){
+    e.preventDefault();
+    taskTitleinput.value = '';
+    note.value = '';
+}
+
+// fifth function for clear notes
+clearBtn.addEventListener('click',clear)
+function clear(e){
+    e.preventDefault();
+    myUl.innerHTML = '';
+    localStorage.clear();
 }
