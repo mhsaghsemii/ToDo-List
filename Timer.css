@@ -111,7 +111,7 @@ input {
 
 #stop-timer {
     cursor: pointer;
-    background: rgb(40, 12, 182);
+    background: rgb(43, 224, 142);
     border-radius: 50%;
     width: 119px;
     height: 119px;
@@ -131,6 +131,12 @@ input {
 
 .div1 label {
     user-select: none;
+}
+
+#menu {
+    margin-bottom: 12px;
+    margin-left: 7px;
+    opacity: 0.6;
 }
 
 /* Css Timer */
