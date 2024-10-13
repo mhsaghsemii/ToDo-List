@@ -85,3 +85,32 @@ function clear(e){
     myUl.innerHTML = '';
     localStorage.clear();
 }
+
+// sixth function for getting notes from local storage and adding them to the page
+window.addEventListener('load',addToNoteList);
+function addToNoteList(){
+    let revieveNote = getLocal();
+    revieveNote.forEach(function(note){
+        const newTitle = document.createElement('h3');
+        newTitle.id ='tasktitle';
+        newTitle.textContent = note.title;
+        const newNote = document.createElement('span');
+        newNote.textContent = note.note;
+        const newLi = document.createElement('li');
+        newLi.classList.add('todo');
+        const newDiv = document.createElement('div');
+        newDiv.id ='todoClass';
+        const checkImg = document.createElement('img');
+        checkImg.src = 'assets/imgs/ion_checkmark-circle-outline.png';
+        checkImg.id = 'checkbtn';
+        const removeImg = document.createElement('img');
+        removeImg.src = 'assets/imgs/ion_close-circle-outline.png';
+        removeImg.id = 'closebtn';
+        newLi.appendChild(newTitle);
+        newLi.appendChild(newNote);
+        newDiv.appendChild(newLi);
+        newDiv.appendChild(checkImg);
+        newDiv.appendChild(removeImg);
+        myUl.appendChild(newDiv);
+    })
+}
