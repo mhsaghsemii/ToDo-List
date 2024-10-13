@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./responsive.css">
+    <link rel="stylesheet" href="./Timer.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
@@ -186,6 +187,68 @@
           </div>
 
 
+
+
+
+          <div class="VP">
+
+
+            <div class="skill">
+                <div class="outer">
+                    <div class="inner">
+                        <div id="number">
+                            Timer
+                        </div>
+                    </div>
+                </div>
+                <!-- svg link -->
+            
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                    <defs>
+                       <linearGradient id="GradientColor" x1="100%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="84%" stop-color="hsla(220, 78%, 29%, 1)" />
+                          <stop offset="100%" stop-color="hsla(221, 45%, 73%, 1)" />
+                       </linearGradient>
+                    </defs>
+                    <circle cx="80" cy="80" r="70" stroke-linecap="round" stroke="url(#GradientColor)" stroke-width="10" fill="none" stroke-dasharray="440" stroke-dashoffset="440" />
+                </svg>
+                <div id="stop-timer">Stop Timer</div>
+            </div>
+        
+        
+                 <!-- Timer Input for Hours and Minutes -->
+            <div id="input-time">
+                <div class="div1">
+                    <label for="hours">Hours: </label>
+                    <input type="number" id="hours" min="0" max="23" value="0">
+                    <label for="minutes">Minutes: </label>
+                    <input type="number" id="minutes" min="0" max="59" value="0">
+                </div>
+                <div class="div2">
+                    <button id="start-timer"><span>Start Timer</span></button>
+        
+                </div>
+            </div>
+          </div>    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <div class="music">
             <div class="music-cover">
               <img src="assets/imgs/music.jpg" alt="">
@@ -222,5 +285,6 @@
 
     <script src="musicplayer.js"></script>
     <script src="script.js"></script>
+    <script src="./Timer.js"></script>
   </body>
 </html>

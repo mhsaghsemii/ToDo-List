@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=popins:200,300,400,500,600,700,800,900&display=swap');
+
+#input-time {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.VP {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.div1 {
+    background-color: white;
+    border: none;
+    padding: 7px;
+    border-radius: 6px;
+}
+
+.div2 button{
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 6px;
+}
+
+input {
+    padding: 2px;
+    border: none;
+    border-radius: 6px;
+}
+
+.div1 label, .div2 button span, .div2 a {
+    font-weight: 500;
+    color: #555;
+}
+
+/* Second css////////////////// */
+
+
+.skill {
+    width: 160px;
+    height: 160px;
+    position: relative;
+}
+
+
+.outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                -6px -6px 10px -1px rgba(255,255,255,0.7)
+}
+
+
+.inner{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+                inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                -0.5px -0.5px 0px rgba(255,255,255,1),
+                0.5px 0.5px 0px rgba(0,0,0,0.15),
+                0px 12px 10px -10px rgba(0,0,0,0.05);
+                
+}
+
+#number {
+    font-weight: 600;
+    color: #555;
+
+}
+
+
+#eliCircle {
+    fill: none;
+    stroke: #ff6347;
+    stroke-width: 20px;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+}
+
+.skill svg {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#start-timer {
+    transition:opacity 0.5s linear; 
+}
+
+.div1 {
+    transition:opacity 0.5s linear;
+    margin-left: 25px;
+}
+
+#stop-timer {
+    cursor: pointer;
+    background: rgb(40, 12, 182);
+    border-radius: 50%;
+    width: 119px;
+    height: 119px;
+    position: absolute;
+    top: 20.8px;
+    left: 20.8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+
+#stop-timer:hover {
+    opacity: 1;
+}
+
+.div1 label {
+    user-select: none;
+}
+
+/* Css Timer */
