@@ -29,7 +29,6 @@ function saveNote(e) {
     const checkImg = document.createElement('img');
     checkImg.src = 'assets/imgs/ion_checkmark-circle-outline.png';
     checkImg.id = 'checkbtn';
-    checkImg.addEventListener('click',test);
     const removeImg = document.createElement('img');
     removeImg.src = 'assets/imgs/ion_close-circle-outline.png';
     removeImg.id = 'closebtn';
@@ -104,7 +103,6 @@ function addToNoteList(){
         const checkImg = document.createElement('img');
         checkImg.src = 'assets/imgs/ion_checkmark-circle-outline.png';
         checkImg.id = 'checkbtn';
-        checkImg.addEventListener('click',test);
         const removeImg = document.createElement('img');
         removeImg.src = 'assets/imgs/ion_close-circle-outline.png';
         removeImg.id = 'closebtn';
