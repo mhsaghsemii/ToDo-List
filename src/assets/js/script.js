@@ -1,116 +1,181 @@
+import l from "./domGenerator.js"
+
 // this section is for selecting input values
-const taskTitleinput = document.querySelector('#title');
+const taskTitleInput = document.querySelector('#title');
 const myUl = document.querySelector('.mainUl');
 const note = document.querySelector('#addNote');
 const saveBtn = document.querySelector('.btns');
 const cancelBtn = document.querySelector('.btnss');
 const clearBtn = document.querySelector('#clearBtn');
 
-
+// Activate Listeners
+window.addEventListener('load',addToNoteList);
+saveBtn.addEventListener('click', saveNote)
+cancelBtn.addEventListener('click',cancel)
+clearBtn.addEventListener('click',clear)
 
 // first function to save the note and generate the note elements
-saveBtn.addEventListener('click', saveNote)
 function saveNote(e) {
+    // Preventing the automatic execution process
     e.preventDefault()
-    const titleNote = taskTitleinput.value;
-    const mainNote = note.value;
-    if (titleNote === '') {
-        alert('Please add a title')
-    }else{
-        const newTitle = document.createElement('h3');
-    newTitle.id ='tasktitle';
-    newTitle.textContent = titleNote;
-    const newNote = document.createElement('span');
-    newNote.textContent = mainNote;
-    const newLi = document.createElement('li');
-    newLi.classList.add('todo');
-    const newDiv = document.createElement('div');
-    newDiv.id ='todoClass';
-    const checkImg = document.createElement('img');
-    checkImg.src = 'assets/imgs/ion_checkmark-circle-outline.png';
-    checkImg.id = 'checkbtn';
-    const removeImg = document.createElement('img');
-    removeImg.src = 'assets/imgs/ion_close-circle-outline.png';
-    removeImg.id = 'closebtn';
-    newLi.appendChild(newTitle);
-    newLi.appendChild(newNote);
-    newDiv.appendChild(newLi);
-    newDiv.appendChild(checkImg);
-    newDiv.appendChild(removeImg);
-    myUl.appendChild(newDiv);
-    taskTitleinput.value = '';
-    note.value = '';
-    addtols({title:titleNote,note:mainNote});
 
+    // Gather User inputs
+    const titleNote = taskTitleInput.value;
+    const mainNote = note.value;
+
+    // Validation User inputs
+    if (titleNote === '') {
+        silverBox({
+            alertIcon: "error",
+            text: "Please insert a title.",
+            centerContent: true,
+            cancelButton: {
+                   text: "OK"
+            }
+        })
+        return
 
     }
-    
-   
-    
 
-    
+    // Inject new task to HTML content
+    myUl.appendChild(template_task(titleNote, mainNote));
+
+    // Clear user input fields
+    taskTitleInput.value = '';
+    note.value = '';
+
+    // Store User data in local-storage
+    addToLS({title:titleNote,note:mainNote});
+
 }
 
 // second function for getting notes from local storage
 function getLocal(){
-    let revieveNote;
+    let reviewNote;
+
+    // Get data from local-storage
     let lsNote = localStorage.getItem('note');
+
+    // If there is no data
     if(lsNote === null){
-        revieveNote = [];
+        // Add new list
+        reviewNote = [];
+
     }else{
-        revieveNote = JSON.parse(lsNote);
+        // Gather data
+        reviewNote = JSON.parse(lsNote);
+
     }
-    return revieveNote;
+
+    // Return data
+    return reviewNote;
 }
 
 // third function for adding notes to local storage
-function addtols(usernote){
-    let oldnote = getLocal();
-    oldnote.push(usernote);
-    localStorage.setItem('note',JSON.stringify(oldnote));
+function addToLS(userNote){
+    // Get all data from local-storage
+    let oldNote = getLocal();
+
+    // Add new note to list of notes
+    oldNote.push(userNote);
+
+    // Send data to local-storage
+    localStorage.setItem('note', JSON.stringify(oldNote));
+
+    silverBox({
+        title: {
+               text: "Success",
+               alertIcon: "success"
+        },
+        text: "Your task has been added."
+    })
+
 }
 
 // fourth function for cancel btn
-cancelBtn.addEventListener('click',cancel)
 function cancel(e){
+    // Preventing the automatic execution process
     e.preventDefault();
-    taskTitleinput.value = '';
+
+    // Show Message to User
+    silverBox({
+        position: "top-right",
+        alertIcon: "info",
+        text: "Saving task was canceled",
+        centerContent: true,
+        showCloseButton: true
+    })
+
+    // Clear user input fields
+    taskTitleInput.value = '';
     note.value = '';
+
 }
 
 // fifth function for clear notes
-clearBtn.addEventListener('click',clear)
 function clear(e){
+    // Show User message
+    silverBox({
+        timer: 2000,
+        customIcon: "./assets/imgs/lightTimeout.png",
+        title: {
+               text: "Clearing your tasks"
+        },
+        centerContent: true
+    })
+
+    // Preventing the automatic execution process
     e.preventDefault();
+
+    // 1) Clear All task from html
     myUl.innerHTML = '';
+
+    // 2) Clear All task from local-storage
     localStorage.clear();
+
 }
 
 // sixth function for getting notes from local storage and adding them to the page
-window.addEventListener('load',addToNoteList);
 function addToNoteList(){
-    let revieveNote = getLocal();
-    revieveNote.forEach(function(note){
-        const newTitle = document.createElement('h3');
-        newTitle.id ='tasktitle';
-        newTitle.textContent = note.title;
-        const newNote = document.createElement('span');
-        newNote.textContent = note.note;
-        const newLi = document.createElement('li');
-        newLi.classList.add('todo');
-        const newDiv = document.createElement('div');
-        newDiv.id ='todoClass';
-        const checkImg = document.createElement('img');
-        checkImg.src = 'assets/imgs/ion_checkmark-circle-outline.png';
-        checkImg.id = 'checkbtn';
-        const removeImg = document.createElement('img');
-        removeImg.src = 'assets/imgs/ion_close-circle-outline.png';
-        removeImg.id = 'closebtn';
-        newLi.appendChild(newTitle);
-        newLi.appendChild(newNote);
-        newDiv.appendChild(newLi);
-        newDiv.appendChild(checkImg);
-        newDiv.appendChild(removeImg);
-        myUl.appendChild(newDiv);
+    getLocal().forEach(function(note){
+        myUl.appendChild(template_task(note.title, note.note));
+
     })
+}
+
+/**
+ * This function generate dom content of each task
+ * @param {string} titleNote - Title of each note
+ * @param {string} mainNote - Context of each note
+ * @returns DOM
+ */
+function template_task(titleNote, mainNote){
+    return l({
+        tag: "div",
+        attributes: { id: "todoClass" },
+        children: [
+            {
+                tag: "li",
+                attributes: { class: "todo" },
+                children: [
+                    {
+                        tag: "h3",
+                        properties: { textContent: titleNote }
+                    },
+                    {
+                        tag: "span",
+                        properties: { textContent: mainNote }
+                    }
+                ]
+            },
+            {
+                tag: "img",
+                attributes: { src: "./assets/imgs/ion_checkmark-circle-outline.png", id: "checkbtn" },
+            },
+            {
+                tag: "img",
+                attributes: { src: "./assets/imgs/ion_close-circle-outline.png", id: "closebtn" },
+            }
+        ],
+    });
 }
