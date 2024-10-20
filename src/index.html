@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./assets/css/Timer.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/silverBox.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="container">
+      <div class="app grid grid--3-cols">
+        <div>
+          <div class="tasks padding">
+            <div class="flex">
+              <img id="menu" src="./assets/imgs/more_vert_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="menu">
+              <span>Taskfly</span>
+            </div>
+
+            <div class="types" >
+              <div class="type color-secondary">
+                <span class="typeNum">0</span><span>Personal</span>
+              </div>
+              <div class="type color-primary">
+                <span  class="typeNum">0</span><span>Official</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="newTasks">
+            <h2>Add New Task</h2>
+            <div class="">
+              <div class="addTask shadow padding">
+                <input id="title" type="text" placeholder="Title" required="" />
+                <form class="option" action="#">
+                  <label for="html">
+                    <input
+                      type="radio"
+                      id="html"
+                      name="fav_language"
+                      value="Personal"
+                      placeholder="Personal"
+                    />
+                    Personal</label
+                  >
+
+                  <label for="css">
+                    <input
+                      type="radio"
+                      id="css"
+                      name="fav_language"
+                      value="Official"
+                    />
+                    Official</label
+                  >
+                </form>
+
+                <form action="">
+                  <input id="addNote" type="text" placeholder="Added Note" />
+                  <button class="btns color-tertiary text-white">Save</button>
+                  <button class="btnss text-danger color-white">Cancel</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="shedule-section  padding">
+          <div class="shedule">
+            <div class="shedule-header">
+              <h2>Today's Shedule</h2>
+            </div>
+            <div>
+             <ul class="weekday">
+              <li><a href="#">Sun</a></li>
+              <li><a href="#">Mon</a></li>
+              <li><a href="#">Tue</a></li>
+              <li><a href="#">Wed</a></li>
+              <li><a href="#">Thu</a></li>
+              <li><a href="#">FRi</a></li>
+              <li><a href="#" id="active">Sat</a></li>
+             </ul>
+            </div>
+
+            <div class="task-list">
+              <div id="UpDiv">
+              <h2 id="taskh2">Task</h2>
+              <button id="clearBtn">Clear All</button>
+              </div>
+
+              <div class="todo-task">
+                <ul class="mainUl">
+                  <!-- <div id="todoClass"> 
+                    <li class="todo">
+                    <h3 id="tasktitle"> tasl title test </h3>
+                    <span>
+                       the tortured poets depastmemt
+                    </span>
+                  </li>    
+                  <img id="checkbtn" src="assets/imgs/ion_checkmark-circle-outline.png"></img>
+                  <img id="closebtn" src=" assets/imgs/ion_close-circle-outline.png" ></img>
+                 </div> -->
+
+                  <!-- <li class="todo">
+                    <span>
+                      
+                    </span>
+                  </li> -->
+                  <!-- <li class="todo">
+                    <span>
+                      
+                    </span>                    
+                  </li> -->
+                  <!-- <li class="todo">
+                    <span>
+                      
+                    </span>                    
+                  </li> -->
+                </ul>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="goal-section padding">
+          <div class="goal">
+            <div class="goal-header">
+              <a href="#"><svg width="24px" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M427.68 351.43C402 320 383.87 304 383.87 217.35 383.87 138 343.35 109.73 310 96c-4.43-1.82-8.6-6-9.95-10.55C294.2 65.54 277.8 48 256 48s-38.21 17.55-44 37.47c-1.35 4.6-5.52 8.71-9.95 10.53-33.39 13.75-73.87 41.92-73.87 121.35C128.13 304 110 320 84.32 351.43 73.68 364.45 83 384 101.61 384h308.88c18.51 0 27.77-19.61 17.19-32.57zM320 384v16a64 64 0 01-128 0v-16" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg></a>
+
+              <p>
+                <span>John Nash</span>
+                <img src="./assets/imgs/user.jpg" alt="user">
+              </p>
+
+
+            </div>
+
+            <div class="goal-graph">
+              <ul>
+                <li><span>Goal</span></li>
+                <li><span>Till</span></li>
+                <li><span>10:00 A.M</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="VP">
+            <div class="skill">
+                <div class="outer">
+                    <div class="inner">
+                        <div id="number">
+                            Timer
+                        </div>
+                    </div>
+                </div>
+                <!-- svg link -->
+            
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                  <defs>
+                      <linearGradient id="GradientColor" x1="100%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stop-color="hsla(31, 90%, 76%, 1)" /> 
+                          <stop offset="100%" stop-color="hsla(302, 82%, 76%, 1)" />
+                      </linearGradient>
+                  </defs>
+                  <circle cx="80" cy="80" r="70" stroke-linecap="round" stroke="url(#GradientColor)" stroke-width="10" fill="none" stroke-dasharray="440" stroke-dashoffset="440" />
+              </svg>              
+                <div id="stop-timer">Stop Timer</div>
+            </div>
+        
+        
+                 <!-- Timer Input for Hours and Minutes -->
+            <div id="input-time">
+                <div class="div1">
+                    <label for="hours">Hours: </label>
+                    <input type="number" id="hours" min="0" max="23" value="0">
+                    <label for="minutes">Minutes: </label>
+                    <input type="number" id="minutes" min="0" max="59" value="0">
+                </div>
+                <div class="div2">
+                    <button id="start-timer"><span>Start Timer</span></button>
+        
+                </div>
+            </div>
+          </div>    
+
+          <div class="music">
+            <div class="music-cover">
+              <img src="./assets/imgs/music.jpg" alt="">
+            </div>
+            <div class="music-details">
+              <div>
+                <h1>Song Title</h1>
+                <p>Singer Name</p>
+              </div>
+              <div class="audio-player">
+                <audio src="./assets/music/Sedaye Tabiat9.mp3"></audio>
+                <input type="range" class="timeline" max="100" value="0">
+
+                <div class="controls">
+                  <button class="back">
+                    <svg width="30px" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M321.94 98L158.82 237.78a24 24 0 000 36.44L321.94 414c15.57 13.34 39.62 2.28 39.62-18.22v-279.6c0-20.5-24.05-31.56-39.62-18.18z"/></svg>
+                  </button>
+                  <button class="player-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#000">
+                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                  <button class="forward">
+                    <svg width="30px" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M190.06 414l163.12-139.78a24 24 0 000-36.44L190.06 98c-15.57-13.34-39.62-2.28-39.62 18.22v279.6c0 20.5 24.05 31.56 39.62 18.18z"/></svg>
+                  </button>
+                </div>
+                
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./assets/js/Timer.js"></script>
+    <script src="./assets/js/musicplayer.js"></script>
+    <script type="module" src="./assets/js/script.js"></script>
+    <script src="./assets/js/silverBox.min.js"></script>
+  </body>
+</html>
